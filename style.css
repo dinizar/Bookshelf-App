@@ -5,7 +5,8 @@
 }
 
 body, input, button {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Cairo', sans-serif;
+    background-color: #f1f1f1;
 }
 
 input, button {
@@ -17,67 +18,50 @@ input, button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: cornflowerblue;
-    color: white;
+    background-color: rgb(34, 34, 34);
+    color: rgb(118, 117, 117);
 }
 
+
 main {
+    max-width: 800px;
     width: 100%;
     margin: 0 auto;
     padding: 16px;
-
+    background-color: #f1f1f1;
 }
 
-/* Style the tab */
-.tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
+.material-icons {
+    vertical-align: bottom;
+    font-size: 19px;
+}
+
+#add-button {
     background-color: #f1f1f1;
-  }
-
-  /* Style the buttons inside the tab */
-  .tab button {
-    background-color: inherit;
-    float: left;
-    border: none;
-    outline: none;
+    border: 3px solid black;
+    color: black;
     cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-  }
+    padding: 5px;
+}
 
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color: #ddd;
-  }
-
-  /* Create an active/current tablink class */
-  .tab button.active {
-    background-color: #ccc;
-  }
-
-  /* Style the tab content */
-  .tabcontent {
-    display: none;
-    padding: 6px 12px;
-    border: 1px solid #ccc;
-    border-top: none;
-  }
+input:focus, textarea:focus {
+    outline: none;
+}
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
 
 .input_section {
-    float: left;
-    width: 60%;
-    display: inline;
+    display: flex;
     flex-direction: column;
-    padding: 16px;
-    border: 1px solid black;
-    border-radius: 10px;
+    padding: 10px;
+    border: 3px solid black;
 }
 
 .input_section > h2 {
     text-align: center;
-    color: cornflowerblue;
+    color: rgb(118, 117, 117);
 }
 
 .input_section > form > .input {
@@ -85,10 +69,9 @@ main {
 }
 
 .input_section > form > button {
-    background-color: cornflowerblue;
+    background-color: rgb(91, 93, 95);
     color: white;
     border: 0;
-    border-radius: 5px;
     display: block;
     width: 100%;
     padding: 8px;
@@ -103,12 +86,10 @@ main {
     display: block;
     width: 100%;
     padding: 8px;
-    border-radius: 5px;
 }
 
-
 .input_section > form > .input > label {
-    color: cornflowerblue;
+    color: black;
     font-weight: bold;
 }
 
@@ -119,33 +100,30 @@ main {
 }
 
 .input_section > form > .input_inline > label {
-    color: cornflowerblue;
+    color: black;
     font-weight: bold;
     margin-right: 10px;
 }
 
 .search_section {
-    float: right;
-    width: 40%;
     margin: 16px 0;
-    display: inline;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 16px;
-    border: 1px solid black;
-    border-radius: 10px;
+    padding: 10px;
+    border: 3px solid black;
 }
 
-.search_section > h2 {
-    color: cornflowerblue;
+.search_section > h3 {
+    color:  rgb(118, 117, 117);
 }
 
 .search_section > form {
-    padding: 16px;
+    padding: 10px 0px;
     width: 100%;
     display: grid;
     grid-template-columns: auto 1fr 0.5fr;
-    grid-gap: 10px;
+    grid-gap: 5px;
 }
 
 .search_section > form > label {
@@ -155,36 +133,44 @@ main {
 
 .search_section > form > input {
     padding: 5px;
-    border-radius: 5px;
+    border-radius: 0px;
 }
 
 .search_section > form > button {
-    background-color: cornflowerblue;
+    background-color: rgb(91, 93, 95);
     color: white;
     border: 0;
-    border-radius: 5px;
     cursor: pointer;
 }
 
-.book_shelf {
-    margin: 16px 0 0 0;
-    border: 1px solid black;
-    padding: 16px;
-    border-radius: 10px;
+.status-search-sudah {
+    background-color: rgb(87, 176, 87);
+    color: white;
+    padding: 4px 4px;
+    border-radius: 50px;
+    width: fit-content;
+}
+.status-search-belum {
+    background-color: rgb(207, 79, 79);
+    color: white;
+    padding: 4px 4px;
+    border-radius: 50px;
+    width: fit-content;
 }
 
-.book_shelf > h2 {
-    color: cornflowerblue;
+.book_shelf {
+    margin: 5px 0 0 0;
+    padding: 5px;
 }
 
 .book_shelf > .book_list {
-    padding: 16px;
+    padding: 10px;
 }
 
 .book_shelf > .book_list > .book_item {
     padding: 8px 16px 16px 16px;
     border: 1px solid black;
-    border-radius: 5px;
+    border-radius: 0px;
     margin: 10px 0;
 }
 
@@ -196,16 +182,87 @@ main {
     border: 0;
     padding: 5px;
     margin: 0 5px 0 0;
-    border-radius: 5px;
+    border-radius: 0px;
     cursor: pointer;
 }
 
 .book_shelf > .book_list > .book_item > .action > .green {
-    background-color: darkgreen;
+    background-color: rgb(39, 79, 39);
     color: white;
 }
 
 .book_shelf > .book_list > .book_item > .action > .red {
-    background-color: darkred;
+    background-color: rgb(94, 34, 34);
     color: white;
 }
+
+/* TAB */
+.tab {
+    overflow: hidden;
+    background-color: rgb(34, 34, 34);
+  }
+
+  .tab .tablinks {
+    color:rgb(197, 197, 197);
+  }
+
+  .tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+
+  .tab button:hover {
+    background-color: rgb(118, 117, 117);
+  }
+
+  .tab button.active {
+    background-color:rgb(118, 117, 117);
+  }
+
+  .tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 3px solid rgb(34, 34, 34);;
+    border-top: none;
+  }
+
+  /* ACCORDION */
+  .accordion.add {
+    background-color: #f1f1f1;
+    border: 3px solid black;
+    color: black;
+    cursor: pointer;
+    padding: 5px;
+    cursor: pointer;
+  }
+
+  .accordion.result {
+    background-color: rgb(118, 117, 117);
+    color: rgb(197, 197, 197);
+    cursor: pointer;
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+  }
+
+  .panel.add{
+    margin-top: 5px;
+    display: none;
+    overflow: hidden;
+  }
+
+  .panel.result {
+    width: 100%;
+    float: left;
+    display: none;
+    overflow: hidden;
+  }

@@ -7,9 +7,7 @@
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Bookshelf Apps</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -18,51 +16,66 @@
         <h1 class="head_bar__title">Bookshelf Apps</h1>
     </header>
     <main>
-        <section class="input_section">
-            <h2>Masukkan Buku Baru</h2>
-            <form id="inputBook">
-                <div class="input">
-                    <label for="inputBookTitle">Judul</label>
-                    <input id="inputBookTitle" type="text" required>
-                </div>
-                <div class="input">
-                    <label for="inputBookAuthor">Penulis</label>
-                    <input id="inputBookAuthor" type="text" required>
-                </div>
-                <div class="input">
-                    <label for="inputBookYear">Tahun</label>
-                    <input id="inputBookYear" type="number" required>
-                </div>
-                <div class="input_inline">
-                    <label for="inputBookIsComplete">Selesai dibaca</label>
-                    <input id="inputBookIsComplete" type="checkbox">
-                </div>
-                <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span>Belum selesai dibaca</span></button>
-            </form>
-        </section>
-
+        <button class="accordion add"><em class="material-icons">note_add</em> Tambah buku</button>
+        <div class="panel add">
+            <section class="input_section">
+                <h2>Masukkan Buku Baru</h2>
+                <form id="inputBook">
+                    <div class="input">
+                        <label for="inputBookTitle">Judul</label>
+                        <input id="inputBookTitle" type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="inputBookAuthor">Penulis</label>
+                        <input id="inputBookAuthor" type="text" required>
+                    </div>
+                    <div class="input">
+                        <label for="inputBookYear">Tahun</label>
+                        <input id="inputBookYear" type="number" required>
+                    </div>
+                    <div class="input_inline">
+                        <label for="inputBookIsComplete">Selesai dibaca</label>
+                        <input id="inputBookIsComplete" type="checkbox">
+                    </div>
+                    <button id="bookSubmit" type="submit">Masukkan Buku ke rak <span id="spanForm">Belum dibaca</span></button>
+                </form>
+            </section>
+        </div>
         <section class="search_section">
-            <h2>Cari Buku (Opsional)</h2>
+            <h3>Cari Buku (Opsional)</h3>
             <form id="searchBook">
                 <label for="searchBookTitle">Judul</label>
                 <input id="searchBookTitle" type="text">
                 <button id="searchSubmit" type="submit">Cari</button>
             </form>
+            <button class="accordion result">Hasil Pencarian
+                <em class="material-icons" id="iconHasilPencarian" style="float: right;">
+                        aspect_ratio
+                </em>
+            </button>
+            <div class="panel result">
+                <section class="book_shelf">
+                    <div id="searchResult" class="book_list">
+                    </div>
+                </section>
+            </div>
         </section>
 
         <div class="tab">
-            <button class="tablinks" onclick="openMenu(event, 'Belum')">Belum dibaca</button>
-            <button class="tablinks" onclick="openMenu(event, 'Sudah')">Sudah dibaca</button>
+            <button class="tablinks active" onclick="openMenu(event, 'Belum')"><em class="material-icons">addchart</em> Belum dibaca</button>
+            <button class="tablinks" onclick="openMenu(event, 'Sudah')"><em class="material-icons">fact_check</em> Sudah dibaca</button>
         </div>
 
-        <div id="Belum" class="tabcontent">
-            <h3>Belum</h3>
-            <p>London is the capital city of England.</p>
+        <div id="Belum" class="tabcontent" style="display:block">
+            <section class="book_shelf">
+            <div id="incompleteBookshelfList" class="book_list">
+            </section>
         </div>
 
         <div id="Sudah" class="tabcontent">
-            <h3>Sudah</h3>
-            <p>Paris is the capital of France.</p>
+            <section class="book_shelf">
+            <div id="completeBookshelfList" class="book_list">
+            </section>
         </div>
 
     </main>
